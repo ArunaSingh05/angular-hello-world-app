@@ -1,0 +1,23 @@
+# Trigger the pipeline on code changes to the master branch
+trigger:
+  branches:
+    include:
+      - development
+
+# Define the pool of agents to run the pipeline jobs
+pool:
+  vmImage: 'ubuntu-latest'
+
+# Define the build and deployment jobs
+jobs:
+  - job: 'Build'
+    displayName: 'Build job'
+    steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '16.x'
+        displayName: 'Install Node.js'
+      - script: |
+          npm install
+          npm run test
+        displayName: 'Build the Angular app'
