@@ -29,12 +29,10 @@ jobs:
           archiveFile: '$(Build.ArtifactStagingDirectory)/dist/MyAngularApp.zip'
           replaceExistingArchive: true
         displayName: 'Create a zip file of the build artifacts'
-
   - job: 'Deploy'
     displayName: 'Deployment job'
     dependsOn: 'Build'
     condition: succeeded()
-    environment: 'Development'
     strategy:
       runOnce:
         deploy:
