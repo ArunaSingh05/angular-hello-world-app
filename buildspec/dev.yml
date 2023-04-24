@@ -14,7 +14,7 @@ steps:
 
   - script: |
       npm install
-      npm run build -- --configuration production
+      npm run build
     displayName: 'Build the Angular app'
 
   - task: ArchiveFiles@2
