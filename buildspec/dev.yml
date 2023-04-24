@@ -10,7 +10,7 @@ pool:
 
 # Define the build and deployment jobs
 jobs:
-  - job: 'Build'
+  - job: 'Setup, Build and Test'
     displayName: 'Build job'
     steps:
       - task: NodeTool@0
