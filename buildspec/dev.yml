@@ -1,7 +1,7 @@
 trigger:
   branches:
     include:
-      - master
+      - development
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -22,7 +22,7 @@ steps:
       rootFolderOrFile: '$(Build.BinariesDirectory)/dist'
       includeRootFolder: false
       archiveType: 'zip'
-      archiveFile: '$(Build.ArtifactStagingDirectory)/MyAngularApp-$(Build.BuildId).zip'
+      archiveFile: '$(Build.ArtifactStagingDirectory)/MyAngularApp.zip'
       replaceExistingArchive: true
     displayName: 'Create a zip file of the build artifacts'
 
@@ -30,5 +30,5 @@ steps:
     inputs:
       azureSubscription: '$(AzureSubscriptionName)'
       appName: '$(AppServiceName)'
-      package: '$(Build.ArtifactStagingDirectory)/MyAngularApp-$(Build.BuildId).zip'
+      package: '$(Build.ArtifactStagingDirectory)/MyAngularApp.zip'
 
