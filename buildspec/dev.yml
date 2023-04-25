@@ -19,7 +19,7 @@ steps:
 
   - task: ArchiveFiles@2
     inputs:
-      rootFolderOrFile: '$(Build.BinariesDirectory)/dist'
+      rootFolderOrFile: '$(Build.BinariesDirectory)/dist/angular-hello-world-app'
       includeRootFolder: false
       archiveType: 'zip'
       archiveFile: '$(Build.ArtifactStagingDirectory)/MyAngularApp.zip'
