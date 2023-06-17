@@ -17,10 +17,4 @@ steps:
       npm run build
     displayName: 'Build the Angular app'
 
-  - task: PowerShell@2
-    inputs:
-      targetType: 'inline'
-      script: 'Get-ChildItem "$(Build.BinariesDirectory)"'
-    displayName: 'List contents of Build.BinariesDirectory'  
-
 
