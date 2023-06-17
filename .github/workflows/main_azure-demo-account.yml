@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: dist
+          path: /dist/angular-hello-world-app
 
   deploy:
     runs-on: ubuntu-latest
@@ -53,4 +53,4 @@ jobs:
           app-name: 'azure-demo-account'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_97CD9B0BDBF541CF84CFAA0BD26C9BC8 }}
-          package: ./dist/angular-hello-world-app
+          package: .
