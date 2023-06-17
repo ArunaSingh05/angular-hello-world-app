@@ -17,4 +17,15 @@ steps:
       npm run build
     displayName: 'Build the Angular app'
 
+  - task: CopyFiles@2
+    inputs:
+      Contents: '**/dist'
+      TargetFolder: '$(build.artifactstagingdirectory)'
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      ArtifactName: 'Build'
+      publishLocation: 'Container'
+
 
