@@ -50,7 +50,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'azure-demo-account'
+          app-name: 'azure-demo-app-devops-basic'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_97CD9B0BDBF541CF84CFAA0BD26C9BC8 }}
           package: .
