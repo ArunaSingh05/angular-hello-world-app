@@ -19,7 +19,7 @@ steps:
 
   - task: CopyFiles@2
     inputs:
-      Contents: '**'
+      Contents: 'dist'
       TargetFolder: '$(build.artifactstagingdirectory)'
 
   - task: PublishBuildArtifacts@1
