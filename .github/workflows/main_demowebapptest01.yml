@@ -53,4 +53,4 @@ jobs:
           app-name: 'demowebapptest01'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_96C7A1DFADE946FC83611FB800ECCD6E }}
-          package: .
+          package: ./dist
