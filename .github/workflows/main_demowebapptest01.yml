@@ -30,7 +30,7 @@ jobs:
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
-          name: node-app
+          name: demowebapptest01
           path: dist/angular-hello-world-app
 
   deploy:
@@ -44,10 +44,10 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v2
         with:
-          name: node-app
+          name: demowebapptest01
 
       - name: 'Deploy to Azure Web App'
-        id: deploy-to-webapp
+        id: demowebapptest01
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'demowebapptest01'
