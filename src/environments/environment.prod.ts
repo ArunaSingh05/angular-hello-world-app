@@ -1,3 +1,9 @@
+// environment.prod.ts
 export const environment = {
-  production: true
+  production: true,
+  auth: {
+    clientID: '#{authClientID}#',
+    domain: '#{authDomain}#',
+  },
+  apiEndpoint: '#{apiEndpoint}#',
 };
