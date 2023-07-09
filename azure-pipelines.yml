@@ -5,6 +5,7 @@
 
 trigger:
 - development
+- main
 
 pool:
   vmImage: ubuntu-latest
@@ -26,7 +27,7 @@ pool:
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
-         name: node-app
-         path: ./dist
+          name: node-app
+          path: ./dist
 
       
