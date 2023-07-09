@@ -27,12 +27,6 @@ jobs:
           npm run build --if-present
           npm run test --if-present
 
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v2
-        with:
-          name: node-app
-          path: ./dist
-
   deploy:
     runs-on: ubuntu-latest
     needs: build
@@ -53,5 +47,5 @@ jobs:
           app-name: 'dummy-web-app-01'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_77C5E9EC7E9D43C7A4D8F1C653140A56 }}
-          package: ./angular-hello-world-app
+          package: ./dist/angular-hello-world-app
 
